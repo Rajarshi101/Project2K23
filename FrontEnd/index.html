@@ -22,51 +22,61 @@
       </ul>
     </nav>
     <main>
-		<div class="holder">
-			<b><u>NOTICE BOARD</u></b>
-  			<ul id="ticker01">
-				<li><span>10/10/2007</span><a href="#"> Notice 1</a></li>
-				<li><span>10/10/2007</span><a href="#"> Notice 2</a></li>
-				<li><span>10/10/2007</span><a href="#"> Notice 3</a></li>
-				<li><span>08/10/2007</span><a href="#"> Notice 4</a></li>
-				<li><span>08/10/2007</span><a href="#"> Notice 5</a></li>
-				<li><span>05/10/2007</span><a href="#"> Notice 6</a></li>
-				<li><span>04/10/2007</span><a href="#"> Notice 7</a></li>
-				<li><span>04/10/2007</span><a href="#"> Notice 8</a></li>
-				<li><span>04/10/2007</span><a href="#"> Notice 9</a></li>
-				<li><span>03/10/2007</span><a href="#"> Notice 10</a></li>
-				<li><span>03/10/2007</span><a href="#"> Notice 11</a></li>
-				<li><span>01/10/2007</span><a href="#"> Notice 12</a></li>
-			</ul>
-		</div>
-      <h2>Something here...</h2>
-      <ul>
-       	<li>HTML</li>
-       	<li>CSS</li>
-       	<li>JavaScript</li>
-       	<li>React</li>
-      </ul>
-      <form>
-			<label for="examdate"><b>Select a Date:</b></label>
-  			<input type="date" id="examdate" name="examdate">
-			<input type="submit" value="Submit">
-		</form>
+        <div class="holder">
+            <b><u>NOTICE BOARD</u></b>
+            <ul id="ticker01">
+                <li><span>10/10/2007</span><a href="#"> Notice 1</a></li>
+                <li><span>10/10/2007</span><a href="#"> Notice 2</a></li>
+                <li><span>10/10/2007</span><a href="#"> Notice 3</a></li>
+                <li><span>08/10/2007</span><a href="#"> Notice 4</a></li>
+                <li><span>08/10/2007</span><a href="#"> Notice 5</a></li>
+                <li><span>05/10/2007</span><a href="#"> Notice 6</a></li>
+                <li><span>04/10/2007</span><a href="#"> Notice 7</a></li>
+                <li><span>04/10/2007</span><a href="#"> Notice 8</a></li>
+                <li><span>04/10/2007</span><a href="#"> Notice 9</a></li>
+                <li><span>03/10/2007</span><a href="#"> Notice 10</a></li>
+                <li><span>03/10/2007</span><a href="#"> Notice 11</a></li>
+                <li><span>01/10/2007</span><a href="#"> Notice 12</a></li>
+            </ul>
+        </div>
+        <div class="video-container">
+            <video autoplay muted loop>
+                <source src="Media/background.mp4" type="video/mp4" />
+            </video>
+        </div>
+        <div class="content">
+            <h2>Something here...</h2>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+        </ul>
+        <form>
+            <label for="examdate"><b>Select a Date:</b></label>
+            <input type="date" id="examdate" name="examdate">
+            <input type="submit" value="Submit">
+        </form>
+        </div>
     </main>
     <footer>
       <p>Copyright © 2023</p>
     </footer>
+    </div>
     <style>
-        * {
-            box-sizing: border-box;
+        html {
+            width: 1280px;
+            margin: 0px;
+            padding: 0px;
         }
 
         body {
-            min-height: 150vh;
+            width: 1280px;
             display: flex;
             flex-direction: column;
             margin: 0;
+            padding: 0;
             font-family: Arial, Helvetica, sans-serif;
-            background-image: linear-gradient(to top right, yellow, red, blueviolet, indigo);
         }
 
         header {
@@ -76,7 +86,7 @@
         }
 
         nav {
-            background-color: #f2f2f2;
+            background-color: #02020250;
             padding: 20px;
         }
 
@@ -104,11 +114,14 @@
         }
 
         .container {
-            min-height: 8vh;
+            position: absolute;
+            left: 1040px;
+            min-height: 7vh;
+            width: 200px;
             justify-content: right;
             align-items: center;
-            display: flex;
-            text-align: center;
+            display: inline-flex;
+            padding-right: 0;
         }
 
         button {
@@ -141,13 +154,15 @@
 
         .holder { 
             position: absolute;
-            right: 25px;
+            top: 250px;
+            right: 90px;
             background-color:#d2b48c;
             width:300px;
             height:350px;
             overflow:hidden;
             padding:10px;
             font-family:Helvetica;
+            z-index: 1;
         }
         .holder .mask {
             position: relative;
@@ -172,7 +187,28 @@
         }
 
         main {
-            padding: 20px;
+            margin: 0;
+            padding: 0;
+            background: rgba(0, 0, 0, 0);
+        }
+        
+        .video-container {
+            /* transform: scaleX(1.108); */
+            position:relative;
+            top:0px;
+            right:0px;
+            bottom:0px;
+            left:0px;
+        }
+
+        .content {
+            position: absolute;
+            top: 250px;
+            left: 30px;
+            background: rgba(0, 0, 0, 0);
+            color: #f1f1f1;
+            width: 900px;
+            padding: 0;
         }
 
         h2 {
@@ -234,7 +270,7 @@
         }
 
         footer {
-            background-color: #f2f2f2;
+            background-color: #00000050;
             padding: 10px;
             text-align: center;
             margin-top: auto;
