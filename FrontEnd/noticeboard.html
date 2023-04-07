@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Exam Schedule</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+            
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Poppins', sans-serif;
+                scroll-behavior: smooth;
+            }
+
+            header {
+                background-color: #333;
+                color: white;
+                padding: 30px;
+                height: 110px;
+            }
+
+            nav{
+                position: sticky;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 75px;
+                background: #2980b9;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                z-index: 1;
+            }
+
+            nav .navbar{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                height: 100%;
+                max-width: 100%;
+                background: #2980b9;
+                margin: auto;
+            }
+
+            nav .navbar .logo a{
+                color: #fff;
+                font-size: 27px;
+                font-weight: 600;
+                text-decoration: none;
+            }
+
+            nav .navbar .menu{
+                display: flex;
+            }
+
+            .navbar .menu li{
+                list-style: none;
+                margin: 0 15px;
+            }
+
+            .navbar .menu li a{
+                color: #fff;
+                font-size: 17px;
+                font-weight: 500;
+                text-decoration: none;
+            }
+
+            .register {
+                position: absolute;
+                right: 30px;
+            }
+
+            button {
+                cursor: pointer;
+                border: 0;
+                border-radius: 5px;
+                font-weight: 600;
+                width: 110px;
+                padding: 5px 0;
+                transition: 0.4s;
+            }
+
+            .reg {
+                color: rgb(104, 85, 224);
+                background-color: rgba(255, 255, 255, 1);
+                border: 1px solid rgba(104, 85, 224, 1);
+            }
+
+            button:hover {
+                color: white;
+                box-shadow: 0 0 20px rgba(104, 85, 224, 0.6);
+                background-color: rgba(104, 85, 224, 1);
+            }
+
+            section{
+                display: flex;
+                height: 100vh;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+                color: #96c7e8;
+                font-size: 70px;
+            }
+
+            #Home{
+                background: rgb(17, 0, 37);
+            }
+
+            .content {
+                position: absolute;
+                top: 300px;
+                left: 100px;
+                width: 500px;
+                padding: 0;
+                
+            }
+
+            .content h2 {
+                width: 400px;
+                font-size: 30px;
+                background: linear-gradient(to right, #C6FFDD, #FBD786, #f7797d);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .content ul {
+                list-style: none;
+                padding-left: 0;
+                background: linear-gradient(to right, #C6FFDD, #FBD786, #f7797d);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .content ul li {
+                list-style: none;
+                padding-left: 0;
+                font-size: 20px;
+            }
+
+            .content form {
+                margin-top: 0px;
+            }
+
+            .content label {
+                font-size: 16px;
+                background: linear-gradient(to right, #b7fdd3, #FBD786, #f7797d);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .content .input mx-auto calendar-picker {
+                width: 280px;
+            }
+
+            .content .drop-shadow calendar calendar-for-picker {
+                display: none;
+            }
+
+            .content .calendar-header {
+                display: none;
+            }
+
+            .content input[type="submit"] {
+                background-color: #333;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .content input[type="submit"]:hover {
+                background-color: #555;
+            }
+
+            footer {
+                background-color: #00000050;
+                padding: 25px;
+                text-align: center;
+                height: 70px;
+            }
+        </style>
+    </head>
+    <body>
+        <header id="header">
+            <h1>This is Moderator's Portal</h1>
+        </header>
+        <nav>
+            <div class="navbar">
+                <ul class="menu">
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Exam Schedule</a></li>
+                    <li><a href="#">Notice Board</a></li>
+                    <li><a href="#">How2Use</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <div class="register">
+                    <button class="reg">Logout</button>
+                </div>
+            </div>
+        </nav>
+        <section id="Home">
+            <div class="content">
+                <h2><b><u><i>Notice Board Menu</i></u></b></h2>
+            </div>
+        </section>
+        <footer>
+            <p>Copyright © 2023</p>
+        </footer>
+    </body>
+</html>
