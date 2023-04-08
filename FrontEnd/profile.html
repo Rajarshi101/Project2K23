@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="UTF-8">
-        <title>Exam Schedule</title>
+        <title>Profile Page</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
@@ -95,7 +95,6 @@
             }
 
             section{
-                display: flex;
                 height: 100vh;
                 width: 100%;
                 align-items: center;
@@ -105,63 +104,77 @@
             }
 
             #Home{
-                background: rgb(17, 0, 37);
+                text-align:center;
+                background: linear-gradient(to bottom right, rgba(84,58,183,1) 25%, rgba(0,172,193,1) 100%);
+                color:white;
             }
 
             .content {
-                position: absolute;
+                height:427px;
                 top: 300px;
                 left: 100px;
-                width: 500px;
+                width: 1349px;
                 padding: 0;
-                
             }
 
-            .content h2 {
-                width: 400px;
-                font-size: 30px;
+            /*Flexbox for containers*/
+            .flex { 
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+
+            h1 {
+                font-family: 'Lato', sans-serif;
+                font-weight:300;
+                letter-spacing: 2px;
+                font-size:48px;
                 background: linear-gradient(to right, #C6FFDD, #FBD786, #f7797d);
                 background-clip: text;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
             }
 
-            .content form {
-                margin-top: 0px;
+            .waves {
+                width: 100%;
+                min-height:230px;
+                max-height:230px;
             }
 
-            .content label {
-                font-size: 16px;
-                background: linear-gradient(to right, #b7fdd3, #FBD786, #f7797d);
-                background-clip: text;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
+            /* Animation */
+            .parallax > use {
+                animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
             }
 
-            .content .input mx-auto calendar-picker {
-                width: 280px;
+            .parallax > use:nth-child(1) {
+                animation-delay: -2s;
+                animation-duration: 7s;
             }
 
-            .content .drop-shadow calendar calendar-for-picker {
-                display: none;
+            .parallax > use:nth-child(2) {
+                animation-delay: -3s;
+                animation-duration: 10s;
             }
 
-            .content .calendar-header {
-                display: none;
+            .parallax > use:nth-child(3) {
+                animation-delay: -4s;
+                animation-duration: 13s;
             }
 
-            .content input[type="submit"] {
-                background-color: #333;
-                color: white;
-                padding: 10px 20px;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                transition: all 0.3s ease;
+            .parallax > use:nth-child(4) {
+                animation-delay: -5s;
+                animation-duration: 20s;
             }
 
-            .content input[type="submit"]:hover {
-                background-color: #555;
+            @keyframes move-forever {
+                0% {
+                    transform: translate3d(-90px,0,0);
+                }
+
+                100% { 
+                    transform: translate3d(85px,0,0);
+                }
             }
 
             footer {
@@ -191,14 +204,26 @@
             </div>
         </nav>
         <section id="Home">
-            <div class="content">
-                <h2><b><u><i>Exam Schedule Menu</i></u></b></h2>
-                <form>
-                    <label for="examdate"><b>Select a Date:</b></label>
-                    <input type="date" id="examdate" name="examdate">
-                    <input type="submit" value="Submit">
-                </form>
+            <!--Content before waves-->
+            <div class="content flex">
+                <h1>Your Profile</h1>
             </div>
+            <!--Waves Container-->
+            <div>
+                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                    <defs>
+                        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                    </defs>
+                    <g class="parallax">
+                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                        <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+                    </g>
+                </svg>
+            </div>
+            <!--Waves end-->
         </section>
         <footer>
             <p>Copyright © 2023</p>
