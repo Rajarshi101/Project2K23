@@ -4,8 +4,6 @@
 
 ## Contributors 🦸
 
-<p align="center">
-  <a href="https://github.com/Rajarshi101/TeamPhoenixSBHproject2K23/graphs/contributors"><img src="https://contributors-img.web.app/image?repo=Rajarshi101/TeamPhoenixSBHproject2K23" /></a>
-</p>
+  <a href="https://github.com/Rajarshi101/TeamPhoenixSBHproject2K23/graphs/contributors"><img src="https://contributors-img.web.app/image?repo=Rajarshi101/TeamPhoenixSBHproject2K23" />
 
 Made with [contributors-img](https://contrib.rocks).
