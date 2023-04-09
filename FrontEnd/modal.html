@@ -218,27 +218,10 @@
         transform: translateY(-.2rem);
       }
 
-      .abs-site-link {
-        position: fixed;
-        bottom: 20px;
-        left: 20px;
-        color: hsla(0, 0%, 1000%, .6);
-        font-size: 1.6rem;
-      }
-
 
       /* Inside of the Modal */
       @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
 
-      body{
-        font-family: 'Poppins', sans-serif;
-        font-weight: 300;
-        font-size: 15px;
-        line-height: 1.7;
-        color: #c4c3ca;
-        background-color: #1f2029;
-        overflow-x: hidden;
-      }
       a {
         cursor: pointer;
         transition: all 200ms linear;
@@ -261,9 +244,6 @@
         margin-left: auto;
         margin-right: auto;
       }
-      h4 {
-        font-weight: 600;
-      }
 
       .log-sign{
         width: 250px;
@@ -277,7 +257,7 @@
         font-size: 20px;
 
       }
-      .section{
+      .sector{
         position: relative;
         width: 100%;
         height: 500px;
@@ -387,7 +367,7 @@
         display: block;
       }
 
-      .inner-section{
+      .inner-sector{
         position: relative;
         width: 100%;
         height: 300px;
@@ -399,8 +379,6 @@
         text-transform: uppercase;
         font-weight: 700;
         font-size: 15px;
-
-
       }
 
       .form-group{ 
@@ -539,20 +517,6 @@
         color: #ffeba7;
         box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
       }
-
-      .logo {
-        position: absolute;
-        top: 30px;
-        right: 30px;
-        display: block;
-        z-index: 100;
-        transition: all 250ms linear;
-      }
-      .logo img {
-        height: 26px;
-        width: auto;
-        display: block;
-      }
     </style>
   </head>
   <body>
@@ -569,10 +533,10 @@
       <p class="box__info">With Background (Opacity .4)</p>  
       <div class="modal-container" id="m2-o" style="--m-background: hsla(0, 0%, 0%, .4);">
         <div class="modal">
-          <div class="section">
+          <div class="sector">
             <div class="row full-height justify-content-center">
               <div class="col-12 text-center align-self-center py-5">
-                <div class="section pb-5 pt-5 pt-sm-2 text-center">
+                <div class="sector pb-5 pt-5 pt-sm-2 text-center">
                   <div class="log-sign"><span>Log In </span><span>Sign Up</span></div>
                   <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
                   <label for="reg-log"></label>
@@ -580,7 +544,7 @@
                     <div class="card-3d-wrapper">
                       <div class="card-front">
                         <div class="center-wrap">
-                          <div class="inner-section">
+                          <div class="inner-sector">
                             <div class="log-sign-part">Log In</div>
                             <div class="form-group">
                               <input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
@@ -597,7 +561,7 @@
                       </div>
                       <div class="card-back">
                         <div class="center-wrap">
-                          <div class="inner-section">
+                          <div class="inner-sector">
                             <div class="log-sign-part">Sign Up</div>
                             <div class="form-group">
                               <input type="text" name="logname" class="form-style" placeholder="Your Full Name" id="logname" autocomplete="off">
