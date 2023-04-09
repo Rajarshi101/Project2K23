@@ -2,8 +2,10 @@
 
 <!-- Copy-paste in your Readme.md file -->
 
-<a href = "https://github.com/Rajarshi101/TeamPhoenixSBHproject2K23/contributors">
-  <img src = "https://contrib.rocks/image?repo = Rajarshi101/TeamPhoenixSBHproject2K23"/>
-</a>
+## Contributors 🦸
+
+<p align="center">
+  <a href="https://github.com/Rajarshi101/TeamPhoenixSBHproject2K23/graphs/contributors"><img src="https://contributors-img.web.app/image?repo=Rajarshi101/TeamPhoenixSBHproject2K23" /></a>
+</p>
 
 Made with [contributors-img](https://contrib.rocks).
