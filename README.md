@@ -1,1 +1,9 @@
 # This is Team Phoenix's Smart Bengal Hackathon 2K23 Project Repository...
+
+<!-- Copy-paste in your Readme.md file -->
+
+<a href = "https://github.com/Rajarshi101/TeamPhoenixSBHproject2K23/contributors">
+  <img src = "https://contrib.rocks/image?repo = GitHub_username/repository_name"/>
+</a>
+
+Made with [contributors-img](https://contrib.rocks).
