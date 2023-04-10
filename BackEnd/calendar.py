@@ -1,24 +1,68 @@
-import pandas as pd
-import datetime as dt
+import calendar
+import datetime
 
-# create a start and end date
-start_date = dt.date(2023, 1, 1)
-end_date = dt.date(2023, 12, 31)
+def schedule_exam(days, subjects):
+    # Define the year for which you want to schedule the exam
+    year = datetime.date.today().year
+    
+    # Generate the calendar for the specified year
+    cal = calendar.Calendar()
+    
+    # Initialize a dictionary to store the scheduled subjects
+    schedule = {}
+    
+    # Loop through each day of the exam and the corresponding subject
+    for i, subject in enumerate(subjects):
+        # Calculate the date for the current day of the exam
+        date = (datetime.date(year, 1, 1) + datetime.timedelta(days=i)).strftime('%d/%m/%Y')
+        
+        # If the date is not a weekend or a national holiday, schedule the subject
+        if not is_weekend(date) and not is_holiday(date):
+            schedule[date] = subject
+    
+    # Generate the calendar for the specified year
+    cal = calendar.monthcalendar(year, 1)
+    
+    # Loop through each day in the calendar and mark the scheduled dates with red color
+    for week in cal:
+        for i, day in enumerate(week):
+            if day != 0:
+                date = datetime.date(year, 1, day).strftime('%d/%m/%Y')
+                
+                if date in schedule:
+                    print('\033[91m' + str(day).rjust(2) + '\033[0m', end=' ')
+                else:
+                    print(str(day).rjust(2), end=' ')
+            else:
+                print('  ', end=' ')
+        print()
+    
+    # Ask the user whether to commit the changes to the calendar
+    commit_changes = input('Do you want to commit the changes to the calendar? (Y/N) ')
+    
+    if commit_changes.lower() == 'y':
+        # TODO: Add code to commit the changes to the calendar
+        print('Changes committed.')
+    else:
+        print('Changes discarded.')
 
-# create a list of dates between the start and end date
-date_range = pd.date_range(start_date, end_date)
+def is_weekend(date_str):
+    # Convert the date string to a datetime object
+    date = datetime.datetime.strptime(date_str, '%d/%m/%Y')
+    
+    # Check if the date is a weekend (Saturday or Sunday)
+    return date.weekday() >= 5
 
-# create a dictionary to hold the calendar data
-calendar_data = {
-    "Date": date_range,
-    "Day_of_Week": date_range.day_name(),
-    "Month": date_range.month_name(),
-    "Year": date_range.year,
-    "Week_Number": date_range.week,
-}
-
-# create a pandas dataframe from the dictionary
-calendar_df = pd.DataFrame(calendar_data)
-
-# print the first 10 rows of the dataframe
-print(calendar_df.head(10))
+def is_holiday(date_str):
+    # Define a list of Indian national holidays
+    indian_holidays = [
+        datetime.date(datetime.date.today().year, 1, 26), # Republic Day
+        datetime.date(datetime.date.today().year, 10, 2), # Gandhi Jayanti
+        datetime.date(datetime.date.today().year, 12, 25) # Christmas
+    ]
+    
+    # Convert the date string to a datetime object
+    date = datetime.datetime.strptime(date_str, '%d/%m/%Y').date()
+    
+    # Check if the date is a national holiday
+    return date in indian_holidays
