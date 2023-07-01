@@ -1,8 +1,16 @@
+<?php 
+  session_start(); 
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['email']);
+  	header("location: index.php");
+  }
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
         <meta charset="UTF-8">
-        <title>How To Use</title>
+        <title>Notice Board</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
@@ -130,7 +138,7 @@
                 padding: 25px;
                 align-items: center;
                 height: 70px;
-                width: 1349px;
+                width: 1519.2px;
                 display: inline-flex;
                 justify-content: center;
                 font-size: 15px;
@@ -147,23 +155,25 @@
         <nav>
             <div class="navbar">
                 <ul class="menu">
-                    <li><a href="profile.html">Profile</a></li>
-                    <li><a href="examschedule.html">Exam Schedule</a></li>
-                    <li><a href="noticeboard.html">Notice Board</a></li>
-                    <li><a href="how2use.html">How To Use</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                <li><a href="profile.php">Profile</a></li>
+                    <li><a href="examschedule.php">Exam Schedule</a></li>
+                    <li><a href="subjectschedule.php">Subject Schedule</a></li>
+                    <li><a href="noticeboard.php">Notice Board</a></li>
+                    <li><a href="how2use.php">How To Use</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                 </ul>
                 <div class="register">
-                    <button class="reg">Logout</button>
+                    <a href="profile.php?logout='1'"><button class="reg">Logout</button></a>
                 </div>
             </div>
         </nav>
         <section id="Home">
             <div class="content">
-                <h2><b><i>Guide: How to Use</i></b></h2>
+                <h2><b><i>Notice Board Menu</i></b></h2>
             </div>
         </section>
         <footer>
             <p>Copyright © 2023. All rights reserved | Total Visits | Website Powered By</p><img src="Media/phoenix.png" height="40" width="40">
         </footer>
+    </body>
 </html>

@@ -1,3 +1,11 @@
+<?php 
+  session_start(); 
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['email']);
+  	header("location: index.php");
+  }
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
@@ -108,9 +116,10 @@
 
             .content {
                 position: absolute;
-                top: 300px;
-                left: 100px;
-                width: 500px;
+                top: 210px;
+                left: 50px;
+                width: 750px;
+                height: 620px;
                 padding: 0;
                 
             }
@@ -122,6 +131,22 @@
                 background-clip: text;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
+            }
+
+            /* .content p {
+                width: 400px;
+                font-size: 30px;
+                background: linear-gradient(to right, #C6FFDD, #FBD786, #f7797d);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            } */
+
+            .content .calendar-container{
+                width: 300px;
+                height: 200px;
+                margin-top: 50px;
+                margin-left: 100px;
             }
 
             .content form {
@@ -150,8 +175,8 @@
 
             .content input[type="submit"] {
                 background-color: #333;
-                color: white;
-                padding: 10px 20px;
+                /* color: white; */
+                padding: 5px 15px;
                 border: none;
                 border-radius: 5px;
                 cursor: pointer;
@@ -168,7 +193,7 @@
                 padding: 25px;
                 align-items: center;
                 height: 70px;
-                width: 1349px;
+                width: 1519.2px;
                 display: inline-flex;
                 justify-content: center;
                 font-size: 15px;
@@ -185,25 +210,32 @@
         <nav>
             <div class="navbar">
                 <ul class="menu">
-                    <li><a href="profile.html">Profile</a></li>
-                    <li><a href="examschedule.html">Exam Schedule</a></li>
-                    <li><a href="noticeboard.html">Notice Board</a></li>
-                    <li><a href="how2use.html">How To Use</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                <li><a href="profile.php">Profile</a></li>
+                    <li><a href="examschedule.php">Exam Schedule</a></li>
+                    <li><a href="subjectschedule.php">Subject Schedule</a></li>
+                    <li><a href="noticeboard.php">Notice Board</a></li>
+                    <li><a href="how2use.php">How To Use</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                 </ul>
                 <div class="register">
-                    <button class="reg">Logout</button>
+                    <a href="profile.php?logout='1'"><button class="reg">Logout</button></a>
                 </div>
             </div>
         </nav>
         <section id="Home">
             <div class="content">
                 <h2><b><i>Exam Schedule Menu</i></b></h2>
-                <form>
+                <!-- <p><b>Note:</b> Please go to Subject Schedule Menu and add Exam Subjects after booking Exam Dates...</p> -->
+                <div class="calendar-container">
+                <?php
+                    include 'index2.php';
+                ?>
+                </div>
+                <!-- <form>
                     <label for="examdate"><b>Select a Date:</b></label>
                     <input type="date" id="examdate" name="examdate">
                     <input type="submit" value="Submit">
-                </form>
+                </form> -->
             </div>
         </section>
         <footer>

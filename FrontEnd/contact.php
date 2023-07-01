@@ -1,3 +1,11 @@
+<?php 
+  session_start(); 
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['email']);
+  	header("location: index.php");
+  }
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
@@ -107,9 +115,9 @@
             }
 
             .contact-holder {
-                background: linear-gradient(to top right, #5e6fa8, #364a8b, #0130ca, #001c79, #0130ca, #364a8b, #5e6fa8);
-                width: 1300px;
-                height: 600px;
+                background: linear-gradient(to top right, #96d1c9, #02d3b7, #007767, #0d423b, #007767, #02d3b7, #96d1c9);
+                width: 1250px;
+                height: 550px;
                 margin: auto;
                 font-family: 'Yantramanav', sans-serif;
                 color: #485e74;
@@ -127,7 +135,7 @@
             }
 
             .wrapper {
-                width: 1090px;
+                width: 1010px;
                 height: 420px;
                 margin-left: auto;
                 margin-right: auto;
@@ -139,6 +147,7 @@
                 border-top-right-radius: 4px;
                 padding-top: 40px;
                 padding-left: 30px;
+                width: 450px;
             }
 
             .company-info h2,
@@ -155,6 +164,7 @@
                 border-bottom-right-radius: 4px;
                 font-size: 15px;
                 padding: 40px;
+                width: 560px;
             }
 
             .contact form {
@@ -230,7 +240,7 @@
                 padding: 25px;
                 align-items: center;
                 height: 70px;
-                width: 1349px;
+                width: 1519.2px;
                 display: inline-flex;
                 justify-content: center;
                 font-size: 15px;
@@ -247,14 +257,15 @@
         <nav>
             <div class="navbar">
                 <ul class="menu">
-                    <li><a href="profile.html">Profile</a></li>
-                    <li><a href="examschedule.html">Exam Schedule</a></li>
-                    <li><a href="noticeboard.html">Notice Board</a></li>
-                    <li><a href="how2use.html">How To Use</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                <li><a href="profile.php">Profile</a></li>
+                    <li><a href="examschedule.php">Exam Schedule</a></li>
+                    <li><a href="subjectschedule.php">Subject Schedule</a></li>
+                    <li><a href="noticeboard.php">Notice Board</a></li>
+                    <li><a href="how2use.php">How To Use</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                 </ul>
                 <div class="register">
-                    <button class="reg">Logout</button>
+                    <a href="profile.php?logout='1'"><button class="reg">Logout</button></a>
                 </div>
             </div>
         </nav>
@@ -265,13 +276,13 @@
                     <div class="company-info">
                         <h2>Team Phoenix</h2>
                         <ul>
-                            <li><i class="fa fa-road"></i> 44 Main Street</li>
-                            <li><i class="fa fa-phone"></i> (555) 555-5555</li>
-                            <li><i class="fa fa-envelope"></i> teamphoenix@domain.com</li>
+                            <li><i class="fa fa-phone"></i> (+91) 555-555-5555</li>
+                            <li><i class="fa fa-envelope"></i> phoenixsoftware9@gmail.com</li>
                         </ul>
+                        <div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.530158020156!2d88.3942159144338!3d22.559266539146364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02768400b479b1%3A0x5ad44b718c770205!2sRCC%20INSTITUTE%20OF%20INFORMATION%20TECHNOLOGY%20(New%20Campus)!5e0!3m2!1sen!2sin!4v1681148753317!5m2!1sen!2sin" width="390px" height="230px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
                     </div>
                     <div class="contact">
-                        <h2>E-mail Us</h2>
+                        <h2>Tech Support</h2>
                         <form id="contact-form">
                             <p>
                                 <label>Name</label>

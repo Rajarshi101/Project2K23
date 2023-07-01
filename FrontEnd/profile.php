@@ -1,8 +1,16 @@
+<?php 
+  session_start(); 
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['email']);
+  	header("location: index.php");
+  }
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
         <meta charset="UTF-8">
-        <title>Notice Board</title>
+        <title>Profile Page</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
@@ -93,7 +101,6 @@
             }
 
             section{
-                display: flex;
                 height: 100vh;
                 width: 100%;
                 align-items: center;
@@ -103,25 +110,90 @@
             }
 
             #Home{
+                text-align:center;
                 background: linear-gradient(to bottom right, rgba(84,58,183,1) 25%, rgba(0,172,193,1) 100%);
+                color:white;
             }
 
             .content {
-                position: absolute;
+                height:427px;
                 top: 300px;
                 left: 100px;
-                width: 500px;
+                width: 1349px;
                 padding: 0;
-                
+            }
+
+            /*Flexbox for containers*/
+            .flex { 
+                display: flex;
+                /* justify-content: center; */
+                /* align-items: center; */
+                /* text-align: center; */
+                padding: 30px;
             }
 
             .content h2 {
-                width: 400px;
+                /* font-family: 'Yantramanav', sans-serif; */
+                /* font-weight: 300; */
+                letter-spacing: 2px;
+                top: 30px;
                 font-size: 30px;
                 background: linear-gradient(to right, #C6FFDD, #FBD786, #f7797d);
                 background-clip: text;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
+            }
+             .content .info {
+                
+                margin-bottom: auto;
+                
+                margin-right: auto;
+             }
+
+            .content ul li {
+                list-style: none;
+                font-size: 20px;
+            }
+
+            .waves {
+                width: 100%;
+                min-height:230px;
+                max-height:230px;
+            }
+
+            /* Animation */
+            .parallax > use {
+                animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+            }
+
+            .parallax > use:nth-child(1) {
+                animation-delay: -2s;
+                animation-duration: 7s;
+            }
+
+            .parallax > use:nth-child(2) {
+                animation-delay: -3s;
+                animation-duration: 10s;
+            }
+
+            .parallax > use:nth-child(3) {
+                animation-delay: -4s;
+                animation-duration: 13s;
+            }
+
+            .parallax > use:nth-child(4) {
+                animation-delay: -5s;
+                animation-duration: 20s;
+            }
+
+            @keyframes move-forever {
+                0% {
+                    transform: translate3d(-90px,0,0);
+                }
+
+                100% { 
+                    transform: translate3d(85px,0,0);
+                }
             }
 
             footer {
@@ -130,7 +202,7 @@
                 padding: 25px;
                 align-items: center;
                 height: 70px;
-                width: 1349px;
+                width: 1519.2px;
                 display: inline-flex;
                 justify-content: center;
                 font-size: 15px;
@@ -147,21 +219,44 @@
         <nav>
             <div class="navbar">
                 <ul class="menu">
-                    <li><a href="profile.html">Profile</a></li>
-                    <li><a href="examschedule.html">Exam Schedule</a></li>
-                    <li><a href="noticeboard.html">Notice Board</a></li>
-                    <li><a href="how2use.html">How To Use</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="profile.php">Profile</a></li>
+                    <li><a href="examschedule.php">Exam Schedule</a></li>
+                    <li><a href="subjectschedule.php">Subject Schedule</a></li>
+                    <li><a href="noticeboard.php">Notice Board</a></li>
+                    <li><a href="how2use.php">How To Use</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                 </ul>
                 <div class="register">
-                    <button class="reg">Logout</button>
+                    <a href="profile.php?logout='1'"><button class="reg">Logout</button></a>
                 </div>
             </div>
         </nav>
         <section id="Home">
-            <div class="content">
-                <h2><b><i>Notice Board Menu</i></b></h2>
+            <!--Content before waves-->
+            <div class="content flex">
+                <h2><b><i>Your Profile</i></b></h2>
+                <div class="info">
+                <ul>
+                    <br><li><b>Email ID:</b> <?php echo $_SESSION['EMAIL'] ?></li>
+                </ul>
+                </div>
             </div>
+            <!--Waves Container-->
+            <div>
+                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                    <defs>
+                        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                    </defs>
+                    <g class="parallax">
+                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                        <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+                    </g>
+                </svg>
+            </div>
+            <!--Waves end-->
         </section>
         <footer>
             <p>Copyright © 2023. All rights reserved | Total Visits | Website Powered By</p><img src="Media/phoenix.png" height="40" width="40">

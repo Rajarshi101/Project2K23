@@ -1,3 +1,4 @@
+<?php include('server.php') ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
@@ -210,7 +211,7 @@
 
             .modal {
                 width: 50rem;
-                height: 58rem;
+                height: 64rem;
                 padding: 4rem 2rem;
                 border-radius: .8rem;
                 color: var(--light);
@@ -337,6 +338,17 @@
                 margin-right: auto;
             }
 
+            .inner-sector .error p {
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 1.7;
+                width: 265px;
+                margin-top: 10px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 10px;
+            }
+
             .log-sign{
                 width: 230px;
                 margin-right: auto;
@@ -405,11 +417,11 @@
                 position: relative;
                 width: 440px;
                 max-width: 100%;
-                height: 370px;
+                height: 480px;
                 -webkit-transform-style: preserve-3d;
                 transform-style: preserve-3d;
                 perspective: 800px;
-                margin-top: 60px;
+                margin-top: 20px;
                 margin-right: auto;
                 margin-left: auto;
             }
@@ -853,7 +865,6 @@
             .about-us-info {
                 margin-right: 400px;
                 width: 60%;
-                
                 padding: 0px 25px 0px 0px;
             }
             }
@@ -986,7 +997,6 @@
             .history-info {
                 margin-left: 400px;
                 width: 60%;
-                
                 padding: 0px 0px 0px 25px;
             }
             }
@@ -1050,8 +1060,281 @@
             }
             }
 
-            #OurTeam{
-                background: #f5f0c4;
+            #OurTeam {
+                background: #212534;
+                height: 1050px;
+                display: flex;
+                flex-direction: column;
+                padding: 65px;
+            }
+
+            #OurTeam h6{
+                width: 313px;
+                font-size: 40px;
+                background: linear-gradient(to right, #C6FFDD, #FBD786, #f7797d);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 15px;
+            }
+
+            @property --rotate {
+            syntax: "<angle>";
+            initial-value: 132deg;
+            inherits: false;
+            }
+
+            :root {
+            --card-height: 65vh;
+            --card-width: calc(var(--card-height) / 1.5);
+            }
+
+            .students, .mentor {
+                height: 657px;
+                width: 1349px;
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                justify-content: space-evenly;
+                /* position: absolute; */
+                z-index: 1;
+            }
+
+
+            .card1, .card2, .card3, .card4 {
+                background: #191c29;
+                width: 300px;
+                height: 350px;
+                padding: 3px;
+                position: relative;
+                border-radius: 6px;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                display: flex;
+                font-size: 0.5em;
+                color: rgb(88 199 250 / 100%);
+                cursor: pointer;
+                font-family: cursive;
+            }
+
+            .card1:hover, .card2:hover, .card3:hover, .card4:hover {
+            color: rgb(88 199 250 / 100%);
+            transition: color 1s;
+            }
+            .card1:hover:before, .card1:hover:after,
+            .card2:hover:before, .card2:hover:after,
+            .card3:hover:before, .card3:hover:after,
+            .card4:hover:before, .card4:hover:after {
+            animation: none;
+            opacity: 0;
+            }
+
+            .memberinfo {
+                position: absolute;
+                margin: auto;
+                width: 250px;
+                height: 300px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                
+            }
+
+            .memberinfo .photo {
+                margin: auto;
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                position: absolute;
+                overflow: hidden;
+            }
+
+            .memberinfo .position {
+                margin-top: 170px;
+                font-size: 20px;
+
+            }
+
+            .memberinfo .position ul {
+                list-style: none;
+                
+            }
+
+            .memberinfo .position ul li h2 {
+                font-size: 20px;
+                
+            }
+
+            .memberinfo .position ul li span {
+                font-size: 15px;
+                
+            }
+
+            .fa-brands {
+                height: 48px;
+                font-size: 24px;
+                text-align: left;
+                color: #ffeba7;
+            }
+
+            /* CARD 1 */
+            .card1::before {
+                content: "";
+                width: 104%;
+                height: 102%;
+                border-radius: 8px;
+                background-image: linear-gradient(
+                var(--rotate)
+                , #5ddcff, #3c67e3 43%, #cc23db);
+                position: absolute;
+                z-index: -1;
+                top: -1%;
+                left: -2%;
+                animation: spin 2.5s linear infinite;
+            }
+
+            .card1::after {
+                position: absolute;
+                content: "";
+                top: calc(var(--card-height) / 6);
+                left: 0;
+                right: 0;
+                z-index: -1;
+                height: 100%;
+                width: 100%;
+                margin: 0 auto;
+                transform: scale(0.8);
+                filter: blur(calc(var(--card-height) / 6));
+                background-image: linear-gradient(
+                var(--rotate)
+                , #5ddcff, #3c67e3 22%, #cc23db);
+                opacity: 1;
+                transition: opacity .5s;
+                animation: spin 2.5s linear infinite;
+            }
+            /* CARD 1 END */
+
+            /*CARD 2 */
+            .card2::before {
+                content: "";
+                width: 104%;
+                height: 102%;
+                border-radius: 8px;
+                background-image: linear-gradient(
+                var(--rotate)
+                , #ff5d5d, #e3713c 43%, #a5c200);
+                position: absolute;
+                z-index: -1;
+                top: -1%;
+                left: -2%;
+                animation: spin 2.5s linear infinite;
+            }
+
+            .card2::after {
+                position: absolute;
+                content: "";
+                top: calc(var(--card-height) / 6);
+                left: 0;
+                right: 0;
+                z-index: -1;
+                height: 100%;
+                width: 100%;
+                margin: 0 auto;
+                transform: scale(0.8);
+                filter: blur(calc(var(--card-height) / 6));
+                background-image: linear-gradient(
+                var(--rotate)
+                , #ff5d5d, #e3713c 43%, #a5c200);
+                opacity: 1;
+                transition: opacity .5s;
+                animation: spin 2.5s linear infinite;
+            }
+            /* CARD 2 END */
+
+            /* CARD 3 */
+            .card3::before {
+                content: "";
+                width: 104%;
+                height: 102%;
+                border-radius: 8px;
+                background-image: linear-gradient(
+                var(--rotate)
+                , #f4ff5d, #7fe33c 43%, #00c2a8);
+                position: absolute;
+                z-index: -1;
+                top: -1%;
+                left: -2%;
+                animation: spin 2.5s linear infinite;
+            }
+
+            .card3::after {
+                position: absolute;
+                content: "";
+                top: calc(var(--card-height) / 6);
+                left: 0;
+                right: 0;
+                z-index: -1;
+                height: 100%;
+                width: 100%;
+                margin: 0 auto;
+                transform: scale(0.8);
+                filter: blur(calc(var(--card-height) / 6));
+                background-image: linear-gradient(
+                var(--rotate)
+                , #f4ff5d, #7fe33c 43%, #00c2a8);
+                opacity: 1;
+                transition: opacity .5s;
+                animation: spin 2.5s linear infinite;
+            }
+            /* CARD 3 END */
+
+            /* CARD 4 */
+            .card4::before {
+                content: "";
+                width: 104%;
+                height: 102%;
+                border-radius: 8px;
+                background-image: linear-gradient(
+                var(--rotate)
+                , #ffe343, #603ce3 43%, #f52323);
+                position: absolute;
+                z-index: -1;
+                top: -1%;
+                left: -2%;
+                animation: spin 2.5s linear infinite;
+            }
+
+            .card4::after {
+                position: absolute;
+                content: "";
+                top: calc(var(--card-height) / 6);
+                left: 0;
+                right: 0;
+                z-index: -1;
+                height: 100%;
+                width: 100%;
+                margin: 0 auto;
+                transform: scale(0.8);
+                filter: blur(calc(var(--card-height) / 6));
+                background-image: linear-gradient(
+                var(--rotate)
+                , #ffe343, #603ce3 43%, #f52323);
+                opacity: 1;
+                transition: opacity .5s;
+                animation: spin 2.5s linear infinite;
+            }
+            /* CARD 4 END */
+
+            @keyframes spin {
+            0% {
+                --rotate: 0deg;
+            }
+            100% {
+                --rotate: 360deg;
+            }
             }
 
             #Contact{
@@ -1059,7 +1342,7 @@
             }
 
             .contact-holder {
-                background: linear-gradient(to top right, #5e6fa8, #364a8b, #0130ca, #001c79, #0130ca, #364a8b, #5e6fa8);
+                background: linear-gradient(to top right, #96d1c9, #02d3b7, #007767, #0d423b, #007767, #02d3b7, #96d1c9);
                 width: 1250px;
                 height: 550px;
                 margin: auto;
@@ -1079,7 +1362,7 @@
             }
 
             .wrapper {
-                width: 1090px;
+                width: 1010px;
                 height: 420px;
                 margin-left: auto;
                 margin-right: auto;
@@ -1091,6 +1374,7 @@
                 border-top-right-radius: 4px;
                 padding-top: 40px;
                 padding-left: 30px;
+                width: 450px;
             }
 
             .company-info h2,
@@ -1107,6 +1391,7 @@
                 border-bottom-right-radius: 4px;
                 font-size: 15px;
                 padding: 40px;
+                width: 560px;
             }
 
             .contact form {
@@ -1201,7 +1486,8 @@
             }
             footer img{
                 margin-left: 10px;
-            }
+            }}
+        
         </style>
         <script src="https://kit.fontawesome.com/236edffaf7.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -1275,16 +1561,21 @@
                                         <div class="center-wrap">
                                             <div class="inner-sector">
                                             <div class="log-sign-part">Log In</div>
+                                            <form method="post" action="index.php">
+                                            <?php include('errors.php'); ?>
                                             <div class="form-group">
-                                                <input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+                                                <input type="email" name="email" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
                                                 <i class="fa-solid fa-at"></i>
                                             </div>	
                                             <div class="form-group mt-2">
-                                                <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+                                                <input type="password" name="password" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
                                                 <i class="fa-solid fa-unlock-keyhole"></i>
                                             </div>
-                                            <div class="submit-btn"><a href="#" class="btn mt-4">submit</a></div>
+                                            <div class="submit-btn">
+                                                <button type="submit" class="btn mt-4" name="login_user">submit</button>
+                                            </div>
                                             <p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your password?</a></p>
+                                            </form>
                                             </div>
                                         </div>
                                         </div>
@@ -1292,24 +1583,29 @@
                                         <div class="center-wrap">
                                             <div class="inner-sector">
                                             <div class="log-sign-part">Sign Up</div>
+                                            <form method="post" action="index.php">
+                                            <?php include('errors.php'); ?>
                                             <div class="form-group">
-                                                <input type="text" name="logname" class="form-style" placeholder="Your Full Name" id="logname" autocomplete="off">
+                                                <input type="text" name="username" value="<?php echo $username; ?>" class="form-style" placeholder="Your Full Name" id="logname" autocomplete="off">
                                                 <i class="fa-regular fa-user"></i>
                                             </div>	
                                             <div class="form-group mt-2">
-                                                <input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+                                                <input type="email" name="email" value="<?php echo $email; ?>" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
                                                 <i class="fa-solid fa-at"></i>
                                             </div>	
                                             <div class="form-group mt-2">
-                                                <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+                                                <input type="password" name="password" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
                                                 <i class="fa-solid fa-unlock-keyhole"></i>
                                             </div>
                                             <div class="form-group mt-2">
-                                                <input type="password" name="logpass" class="form-style" placeholder="Organization Token" id="logpass" autocomplete="off">
+                                                <input type="password" name="token" class="form-style" placeholder="Organization Token" id="logtoken" autocomplete="off">
                                                 <i class="fa-solid fa-hashtag"></i>
                                             </div>
-                                            <div class="submit-btn"><a href="#" class="btn mt-4">submit</a></div>
+                                            <div class="submit-btn">
+                                                <button type="submit" class="btn mt-4" name="reg_user">submit</button>
                                             </div>
+                                            </div>
+                                            </form>
                                         </div>
                                         </div>
                                     </div>
@@ -1330,7 +1626,7 @@
             <!-- <video autoplay muted loop>
                 <source src="Media/background.mp4" type="video/mp4"/>
             </video> -->
-            <img src="Media/AI.jpg" width="1349px" height="657px">
+            <img src="Media/AI.jpg" width="1519.2px" height="713.6px">
             <div class="holder">
                 <h2><b><u>NOTICE BOARD</u></b></h2>
                 <ul id="ticker01">
@@ -1352,7 +1648,8 @@
             <div class="content">
                 <h2><b><i>Viewing and Scheduling.<br>To the power of ExamSked</i></b></h2>
                 <ul>
-                    <li><br>ExamSked is an AI based exam scheduling<br>platform that makes exam scheduling<br>exponentially better</li>
+                    <li><br>ExamSked is an exam scheduling<br>platform that makes exam scheduling<br>exponentially better</li>
+                    <!-- <li><br>ExamSked is an AI based exam scheduling<br>platform that makes exam scheduling<br>exponentially better</li> -->
                 </ul>
                 <form>
                     <label for="examdate"><b>Select a Date:</b></label>
@@ -1376,7 +1673,8 @@
               
                     <h2>Ab<u>out ExamS</u>ked</h2>
               
-                    <p>As a student at times, we have faced a situation sometimes when academic exam schedule and public exam dates clash with each other, which gives rise to chaotic condition for both the students as well as for the conducting body as well. By taking that as motivation we have came up with an idea of making an AI based software for scheduling of exam dates. For Universities/PSU: Universities and PSU’s can schedule their exams on this software by means of the tech stack used in this software. For students: Students can view the calendar and can get a glance view of all the exams at a single point of time.</p>
+                    <p>As a student at times, we have faced a situation sometimes when academic exam schedule and public exam dates clash with each other, which gives rise to chaotic condition for both the students as well as for the conducting body as well. By taking that as motivation we have came up with an idea of making a software for scheduling of exam dates. For Universities/PSU: Universities and PSU’s can schedule their exams on this software by means of the tech stack used in this software. For students: Students can view the calendar and can get a glance view of all the exams at a single point of time.</p>
+                    <!-- <p>As a student at times, we have faced a situation sometimes when academic exam schedule and public exam dates clash with each other, which gives rise to chaotic condition for both the students as well as for the conducting body as well. By taking that as motivation we have came up with an idea of making an AI based software for scheduling of exam dates. For Universities/PSU: Universities and PSU’s can schedule their exams on this software by means of the tech stack used in this software. For students: Students can view the calendar and can get a glance view of all the exams at a single point of time.</p> -->
               
                   </div>
               
@@ -1406,7 +1704,92 @@
               
               </div>
         </section>
-        <section id="OurTeam">Our Team Section</section>
+        <section id="OurTeam">
+            <h6><b>Meet The Team</b></h6>
+            <div class="students">
+                <div class="card1">
+                    <div class="memberinfo">
+                        <div class="photo">
+                            <img src="Media/Rajarshi.jpg" width="150px" height="214px">
+                        </div>
+                        <div class="position">
+                            <ul>
+                                <li><h2>Rajarshi Sengupta</h2></li>
+                                <li><span>Frontend Developer</span></li>
+                            </ul>
+                            
+                        </div>
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/rajarshi-sengupta-011066227/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://github.com/Rajarshi101" target="_blank"><i class="fa-brands fa-github"></i></a>
+                            
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="card2">
+                    <div class="memberinfo">
+                        <div class="photo">
+                            <img src="Media/Soham.jpg" width="170px" height="170px">
+                        </div>
+                        <div class="position">
+                            <ul>
+                                <li><h2>Soham Sarkar</h2></li>
+                                <li><span>Backend Developer</span></li>
+                                
+                            </ul>
+                            
+                        </div>
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/soham-sarkar-b3290b214/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://github.com/techsavvy0109" target="_blank"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://instagram.com/soham7064/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                            
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="card3">
+                    <div class="memberinfo">
+                        <div class="photo">
+                            <img src="Media/Autithi.jpg" width="150px" height="155px">
+                        </div>
+                        <div class="position">
+                            <ul>
+                                <li><h2>Autithi Paul</h2></li>
+                                <li><span>Backend Developer</span></li>
+                            </ul>
+                            
+                        </div>
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/autithi-paul-0911a8209/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://github.com/Autithi2002" target="_blank"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://instagram.com/a_u_t_i_t_h_i/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mentor">
+                <div class="card4">
+                    <div class="memberinfo">
+                        <div class="photo">
+                            <img src="Media/SoumyadipSir.jpg" width="150px" height="228px">
+                        </div>
+                        <div class="position">
+                            <ul>
+                                <li><h2>Dr. Soumyadip Dhar</h2></li>
+                                <li><span>Mentor</span></li>
+                            </ul>
+                            
+                        </div>
+                        <div class="social">
+                            <a href="https://scholar.google.com/citations?hl=en&user=G5B5Z0kAAAAJ&authuser=0" target="_blank"><i class="fa-brands fa-google"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section id="Contact">
             <div class="contact-holder">
                 <h2 class="brand"><span>Contact Us</span></h2>
@@ -1414,13 +1797,13 @@
                     <div class="company-info">
                         <h2>Team Phoenix</h2>
                         <ul>
-                            <li><i class="fa fa-road"></i> 44 Main Street</li>
-                            <li><i class="fa fa-phone"></i> (555) 555-5555</li>
-                            <li><i class="fa fa-envelope"></i> teamphoenix@domain.com</li>
+                            <li><i class="fa fa-phone"></i> (+91) 555-555-5555</li>
+                            <li><i class="fa fa-envelope"></i> phoenixsoftware9@gmail.com</li>
                         </ul>
+                        <div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.530158020156!2d88.3942159144338!3d22.559266539146364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02768400b479b1%3A0x5ad44b718c770205!2sRCC%20INSTITUTE%20OF%20INFORMATION%20TECHNOLOGY%20(New%20Campus)!5e0!3m2!1sen!2sin!4v1681148753317!5m2!1sen!2sin" width="390px" height="230px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
                     </div>
                     <div class="contact">
-                        <h2>E-mail Us</h2>
+                        <h2>Tech Support</h2>
                         <form id="contact-form">
                             <p>
                                 <label>Name</label>
